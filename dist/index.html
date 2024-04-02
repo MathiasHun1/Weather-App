@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <p id="city">Budapest</p>
+        <p id="country">Hungary</p>
+        <div class="temp-wrapper">
+            <span id="temp">16</span><span id="temp-sign">&deg;C</span>
+        </div>
+            <img id="today-weather-main-img" src="images/sunny.webp" alt="image">
+            <p>Light rain</p>
+    </header>
+    <main>
+        <!------------- today ----------->
+        <div class="card" id="today">
+            <div>
+                <small>2024-04-02</small>
+                <h1>Mon</h1>
+            </div>
+            <div class="temp-wrapper-card">
+                <span class="temp-card">16</span>
+                <span class="temp-sign-card">&deg;C</span>
+                <img id="today-waether-card-img" src="images/sunny.webp" alt="img rain">
+            </div>
+            <div class="wind-wrapper">
+                <p>windy</p>
+                <img id="today-wind-img" src="images/wind3.webp" alt="img wind">
+            </div>
+        </div>
+           <!-- --------------------- -->
+        <div class="card" id="tomorrow">
+            <h1>Mon</h1>
+            <div class="temp-wrapper-card">
+                <span class="temp-card">16</span>
+                <span class="temp-sign-card">&deg;C</span>
+            </div>
+            <img src="" alt="img rain">
+            <img src="" alt="img wind">
+        </div>
+        <!----------------------------- -->
+        <div class="card" id="third-day">
+            <h1>Mon</h1>
+            <div class="temp-wrapper-card">
+                <span class="temp-card">16</span>
+                <span class="temp-sign-card">&deg;C</span>
+            </div>
+            <img src="" alt="img rain">
+            <img src="" alt="img wind">
+        </div>
+    </main>
+    <footer></footer>
+    <script src="bundle.js"></script>
+</body>
+</html>

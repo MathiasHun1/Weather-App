@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-image: url('./images/background.webp');
+    background-size: cover;
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;;
+}
+
+header {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.temp-wrapper {
+    width: 100%;
+    /* display: flex; */
+    justify-content: center;
+    align-items: flex-end;
+    gap: 15px;
+    gap: 0.5rem;
+    text-align: center;
+}
+
+#city {
+    color: white;
+    font-size: 60px;
+}
+
+#country {
+    color: white;
+}
+
+#temp {
+    color: white;
+    font-size: 60px;
+}
+
+#temp-sign {
+    color: white;
+    font-size: 35px;
+}
+
+main {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.card {
+    border: 2px solid;
+    width: 250px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: rgba(208, 208, 209, 0.705);
+}
+
+#today-weather-main-img {
+    width: 150px;
+    display: block;
+}
+
+#today-waether-card-img  {
+    /* width: 40px; */
+}
+
+.card img {
+    width: 50px;
+}
+
+.wind-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-style: italic;
+}
+
+.card img {
+    display: block;
+}
+
+.temp-wrapper-card {
+    text-align: center;
+}
+
