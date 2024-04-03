@@ -16,4 +16,5 @@ submitButton.addEventListener('click', async (e)=> {
     headerObj = await createWeatherObj(city)
     renderHeader(headerObj)
     renderCards(headerObj)
+    inputText.value = ''
 })
