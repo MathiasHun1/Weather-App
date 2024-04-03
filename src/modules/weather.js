@@ -17,56 +17,60 @@ const get3daysForecast = async (town) => {
 
 
 async function createWeatherObj(town) {
-    //formatting the input
-    if (town === undefined || town === '') {
-        town = 'Budapest'
-    } else {
-        town = town.trim()
-    }
-    //fetching the data and store it in an object
-    const weather = await get3daysForecast(town)
-    const headerObj = {
-        city: weather.location.name,
-        country : weather.location.country,
-
-        current: {
-            celsius: weather.currentWeather.temp_c,
-            wind: weather.currentWeather.wind_kph,
-            cloud: weather.currentWeather.cloud,
-            status: weather.currentWeather.condition.text,
-            iconName: returnIconName(weather.currentWeather.condition.code),
-        },
-
-        today: {
-            date: weather.todayWeather.date,
-            max_celsius: weather.todayWeather.day.maxtemp_c,
-            min_celsius: weather.todayWeather.day.mintemp_c,
-            status: weather.todayWeather.day.condition.text,
-            iconName: returnIconName(weather.todayWeather.day.condition.code),
-            rainChance: weather.todayWeather.day.daily_chance_of_rain,
-            maxWind: weather.todayWeather.day.maxwind_kph,
-        },
-        tomorrow: {
-            date: weather.tomorrowWeather.date,
-            max_celsius: weather.tomorrowWeather.day.maxtemp_c,
-            min_celsius: weather.tomorrowWeather.day.mintemp_c,
-            status: weather.tomorrowWeather.day.condition.text,
-            iconName: returnIconName(weather.tomorrowWeather.day.condition.code),
-            rainChance: weather.tomorrowWeather.day.daily_chance_of_rain,
-            maxWind: weather.tomorrowWeather.day.maxwind_kph,
-        },
-        thirdDay: {
-            date: weather.thirdDayWeather.date,
-            max_celsius: weather.thirdDayWeather.day.maxtemp_c,
-            min_celsius: weather.thirdDayWeather.day.mintemp_c,
-            status: weather.thirdDayWeather.day.condition.text,
-            iconName: returnIconName(weather.thirdDayWeather.day.condition.code),
-            rainChance: weather.thirdDayWeather.day.daily_chance_of_rain,
-            maxWind: weather.thirdDayWeather.day.maxwind_kph,
+    try {
+        //formatting the input
+        if (town === undefined || town === '') {
+            town = 'Budapest'
+        } else {
+            town = town.trim()
         }
+        //fetching the data and store it in an object
+        const weather = await get3daysForecast(town)
+        const headerObj = {
+            city: weather.location.name,
+            country : weather.location.country,
+    
+            current: {
+                celsius: weather.currentWeather.temp_c,
+                wind: weather.currentWeather.wind_kph,
+                cloud: weather.currentWeather.cloud,
+                status: weather.currentWeather.condition.text,
+                iconName: returnIconName(weather.currentWeather.condition.code),
+            },
+    
+            today: {
+                date: weather.todayWeather.date,
+                max_celsius: weather.todayWeather.day.maxtemp_c,
+                min_celsius: weather.todayWeather.day.mintemp_c,
+                status: weather.todayWeather.day.condition.text,
+                iconName: returnIconName(weather.todayWeather.day.condition.code),
+                rainChance: weather.todayWeather.day.daily_chance_of_rain,
+                maxWind: weather.todayWeather.day.maxwind_kph,
+            },
+            tomorrow: {
+                date: weather.tomorrowWeather.date,
+                max_celsius: weather.tomorrowWeather.day.maxtemp_c,
+                min_celsius: weather.tomorrowWeather.day.mintemp_c,
+                status: weather.tomorrowWeather.day.condition.text,
+                iconName: returnIconName(weather.tomorrowWeather.day.condition.code),
+                rainChance: weather.tomorrowWeather.day.daily_chance_of_rain,
+                maxWind: weather.tomorrowWeather.day.maxwind_kph,
+            },
+            thirdDay: {
+                date: weather.thirdDayWeather.date,
+                max_celsius: weather.thirdDayWeather.day.maxtemp_c,
+                min_celsius: weather.thirdDayWeather.day.mintemp_c,
+                status: weather.thirdDayWeather.day.condition.text,
+                iconName: returnIconName(weather.thirdDayWeather.day.condition.code),
+                rainChance: weather.thirdDayWeather.day.daily_chance_of_rain,
+                maxWind: weather.thirdDayWeather.day.maxwind_kph,
+            }
+        } 
+    
+        return headerObj 
+    } catch (error) {
+        alert('something went wrong')
     }
-
-    return headerObj 
 }
 
 function findIconCode() {
