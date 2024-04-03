@@ -1,4 +1,9 @@
-import { todayWeather, tomorrowWeather, thirdDayWeather } from "./modules/weather";
+import { createWeatherObj } from "./modules/weather"
+import { renderHeader, renderToday } from "./modules/UI"
 
 
-console.log(todayWeather)
+
+const headerObj = await createWeatherObj('london')
+console.log(headerObj)
+renderHeader(headerObj)
+renderToday(headerObj)

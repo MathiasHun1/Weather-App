@@ -8,34 +8,38 @@
 </head>
 <body>
     <header>
+        
         <p id="city">Budapest</p>
-        <p id="country">Hungary</p>
+        <span id="country">Hungary</span>
         <div class="temp-wrapper">
-            <span id="temp">16</span><span id="temp-sign">&deg;C</span>
+            <span id="temp"></span><span id="temp-sign">&deg;C</span>
         </div>
             <img id="today-weather-main-img" src="images/sunny.webp" alt="image">
-            <p>Light rain</p>
+            <p id="current-status">moderate wind</p>
     </header>
     <main>
         <!------------- today ----------->
         <div class="card" id="today">
             <div>
-                <small>2024-04-02</small>
-                <h1>Mon</h1>
+                <small class="date" id="today-date">2024-04-02</small>
+                <h1 class="dayname" id="today-name">Mon</h1>
             </div>
             <div class="temp-wrapper-card">
-                <span class="temp-card">16</span>
+                <span class="temp-card" id="today-maxtemp">max: 16</span>
                 <span class="temp-sign-card">&deg;C</span>
-                <img id="today-waether-card-img" src="images/sunny.webp" alt="img rain">
+                <img id="today-waether-card-img" src="images/sunny.webp" alt="image">
+                <span class="temp-card" id="today-mintemp">min: 16</span>
+                <span class="temp-sign-card">&deg;C</span>
             </div>
-            <div class="wind-wrapper">
-                <p>windy</p>
-                <img id="today-wind-img" src="images/wind3.webp" alt="img wind">
-            </div>
+            <p class="rain" id="today-rain">Rain chance: 13%</p>
+            <p class="wind" id="today-wind">Max wind: 35 kph</p>
         </div>
            <!-- --------------------- -->
         <div class="card" id="tomorrow">
-            <h1>Mon</h1>
+            <div>
+                <small>2024-04-02</small>
+                <h1>Mon</h1>
+            </div>
             <div class="temp-wrapper-card">
                 <span class="temp-card">16</span>
                 <span class="temp-sign-card">&deg;C</span>

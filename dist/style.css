@@ -74,7 +74,7 @@ main {
 }
 
 #today-weather-main-img {
-    width: 150px;
+    width: 130px;
     display: block;
 }
 
@@ -100,5 +100,9 @@ main {
 
 .temp-wrapper-card {
     text-align: center;
+}
+
+#current-status {
+    margin-top: 10px;
 }
 
