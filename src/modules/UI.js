@@ -1,4 +1,3 @@
-import { weather } from "./weather";
 import { format } from 'date-fns'
 import { returnIconName } from "../conditions";
 
@@ -44,8 +43,10 @@ function renderHeader (obj) {
 
     temp.textContent = obj.current.celsius
     status.textContent = obj.current.status
-    image.src = `./dist/images/113.png`
+    
+    image.src = `images/${obj.current.iconName}.png`
 }
+
 function renderToday(obj) {
     const date = document.querySelector('#today-date')
     const dayName = document.querySelector('#today-name')
@@ -59,12 +60,52 @@ function renderToday(obj) {
     dayName.textContent = format(obj.today.date, 'eee')
     maxTemp.textContent = 'Max: ' + obj.today.max_celsius
     minTemp.textContent = 'Min: ' + obj.today.min_celsius
-    statusIcon.src = obj.today.icon
-    rainChance.textContent = 'Chance of rain: ' + obj.today.rainChance
+    statusIcon.src = `images/${obj.today.iconName}.png`
+    rainChance.textContent = 'Chance of rain: ' + obj.today.rainChance + ' %'
     maxWind.textContent = 'Max wind: ' + obj.today.maxWind
 }
 
-function renderCards(obj) {
+function renderTomorrow(obj) {
+    const date = document.querySelector('#tomorrow-date')
+    const dayName = document.querySelector('#tomorrow-name')
+    const maxTemp = document.querySelector('#tomorrow-maxtemp')
+    const minTemp = document.querySelector('#tomorrow-mintemp')
+    const statusIcon = document.querySelector('#tomorrow-waether-card-img')
+    const rainChance = document.querySelector('#tomorrow-rain')
+    const maxWind = document.querySelector('#tomorrow-wind')
+
+    date.textContent = obj.tomorrow.date
+    dayName.textContent = format(obj.tomorrow.date, 'eee')
+    maxTemp.textContent = 'Max: ' + obj.tomorrow.max_celsius
+    minTemp.textContent = 'Min: ' + obj.tomorrow.min_celsius
+    statusIcon.src = `images/${obj.tomorrow.iconName}.png`
+    rainChance.textContent = 'Chance of rain: ' + obj.tomorrow.rainChance + ' %'
+    maxWind.textContent = 'Max wind: ' + obj.tomorrow.maxWind
 }
 
-export {renderHeader, renderToday}
+function renderThirdDay(obj) {
+    const date = document.querySelector('#thirdDay-date')
+    const dayName = document.querySelector('#thirdDay-name')
+    const maxTemp = document.querySelector('#thirdDay-maxtemp')
+    const minTemp = document.querySelector('#thirdDay-mintemp')
+    const statusIcon = document.querySelector('#thirdDay-waether-card-img')
+    const rainChance = document.querySelector('#thirdDay-rain')
+    const maxWind = document.querySelector('#thirdDay-wind')
+
+    date.textContent = obj.thirdDay.date
+    dayName.textContent = format(obj.thirdDay.date, 'eee')
+    maxTemp.textContent = 'Max: ' + obj.thirdDay.max_celsius
+    minTemp.textContent = 'Min: ' + obj.thirdDay.min_celsius
+    statusIcon.src = `images/${obj.thirdDay.iconName}.png`
+    rainChance.textContent = 'Chance of rain: ' + obj.thirdDay.rainChance + ' %'
+    maxWind.textContent = 'Max wind: ' + obj.thirdDay.maxWind
+}
+
+function renderCards(obj) {
+    renderToday(obj)
+    renderTomorrow(obj)
+    renderThirdDay(obj)
+}
+
+
+export {renderHeader, renderCards}

@@ -8,14 +8,17 @@
 </head>
 <body>
     <header>
-        
+        <form action="">
+            <input type="text" id="input-text">
+            <input type="submit" id="submit-button" value="Search"></input>
+        </form>
         <p id="city">Budapest</p>
         <span id="country">Hungary</span>
         <div class="temp-wrapper">
             <span id="temp"></span><span id="temp-sign">&deg;C</span>
         </div>
-            <img id="today-weather-main-img" src="images/sunny.webp" alt="image">
-            <p id="current-status">moderate wind</p>
+        <p id="current-status">moderate wind</p>
+            <img id="today-weather-main-img" src="" alt="image">
     </header>
     <main>
         <!------------- today ----------->
@@ -25,37 +28,64 @@
                 <h1 class="dayname" id="today-name">Mon</h1>
             </div>
             <div class="temp-wrapper-card">
-                <span class="temp-card" id="today-maxtemp">max: 16</span>
-                <span class="temp-sign-card">&deg;C</span>
-                <img id="today-waether-card-img" src="images/sunny.webp" alt="image">
-                <span class="temp-card" id="today-mintemp">min: 16</span>
-                <span class="temp-sign-card">&deg;C</span>
+                <img id="today-waether-card-img" src="" alt="image">
+                <div class="temp-cont">
+                    <p class="temp-card" id="today-maxtemp">max: 16</p>
+                    <span class="temp-sign-card">&deg;C</span>
+                </div>
+                <div>
+                    <p class="temp-card" id="today-mintemp">min: 16</p>
+                    <span class="temp-sign-card">&deg;C</span>
+                </div>
             </div>
-            <p class="rain" id="today-rain">Rain chance: 13%</p>
-            <p class="wind" id="today-wind">Max wind: 35 kph</p>
+            <div class="rain-wind-cont">
+                <p class="rain" id="today-rain">Rain chance: 13%</p>
+                <p class="wind" id="today-wind">Max wind: 35 kph</p>
+            </div>
         </div>
            <!-- --------------------- -->
-        <div class="card" id="tomorrow">
+           <div class="card" id="tomorrow">
             <div>
-                <small>2024-04-02</small>
-                <h1>Mon</h1>
+                <small class="date" id="tomorrow-date">2024-04-02</small>
+                <h1 class="dayname" id="tomorrow-name">Mon</h1>
             </div>
             <div class="temp-wrapper-card">
-                <span class="temp-card">16</span>
-                <span class="temp-sign-card">&deg;C</span>
+                <img id="tomorrow-waether-card-img" src="" alt="image">
+                <div class="temp-cont">
+                    <p class="temp-card" id="tomorrow-maxtemp">max: 16</p>
+                    <span class="temp-sign-card">&deg;C</span>
+                </div>
+                <div>
+                    <p class="temp-card" id="tomorrow-mintemp">min: 16</p>
+                    <span class="temp-sign-card">&deg;C</span>
+                </div>
             </div>
-            <img src="" alt="img rain">
-            <img src="" alt="img wind">
+            <div class="rain-wind-cont">
+                <p class="rain" id="tomorrow-rain">Rain chance: 13%</p>
+                <p class="wind" id="tomorrow-wind">Max wind: 35 kph</p>
+            </div>
         </div>
         <!----------------------------- -->
-        <div class="card" id="third-day">
-            <h1>Mon</h1>
-            <div class="temp-wrapper-card">
-                <span class="temp-card">16</span>
-                <span class="temp-sign-card">&deg;C</span>
+        <div class="card" id="thirdDay">
+            <div>
+                <small class="date" id="thirdDay-date">2024-04-02</small>
+                <h1 class="dayname" id="thirdDay-name">Mon</h1>
             </div>
-            <img src="" alt="img rain">
-            <img src="" alt="img wind">
+            <div class="temp-wrapper-card">
+                <img id="thirdDay-waether-card-img" src="" alt="image">
+                <div class="temp-cont">
+                    <p class="temp-card" id="thirdDay-maxtemp">max: 16</p>
+                    <span class="temp-sign-card">&deg;C</span>
+                </div>
+                <div>
+                    <p class="temp-card" id="thirdDay-mintemp">min: 16</p>
+                    <span class="temp-sign-card">&deg;C</span>
+                </div>
+            </div>
+            <div class="rain-wind-cont">
+                <p class="rain" id="thirdDay-rain">Rain chance: 13%</p>
+                <p class="wind" id="thirdDay-wind">Max wind: 35 kph</p>
+            </div>
         </div>
     </main>
     <footer></footer>

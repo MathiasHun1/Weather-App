@@ -1,8 +1,4 @@
-export function returnIconName(input) {
-    const number = parseInt('input')
-    const elem = conditions.find(element => element.code === number)
-    return element.icon
-}
+function returnIconName(input) {
 
 const conditions = [
 	{
@@ -294,3 +290,10 @@ const conditions = [
 		"icon" : 395
 	}
 ]
+
+const number = parseInt(input)
+const elem = conditions.find(element => element["code"] === number)
+return elem["icon"]
+}
+
+export {returnIconName}

@@ -13,7 +13,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;;
+    position: relative;
 }
 
 header {
@@ -26,8 +26,7 @@ header {
 .temp-wrapper {
     width: 100%;
     /* display: flex; */
-    justify-content: center;
-    align-items: flex-end;
+    /* flex-direction: row; */
     gap: 15px;
     gap: 0.5rem;
     text-align: center;
@@ -57,6 +56,7 @@ main {
     top: 50%;
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
 }
@@ -68,13 +68,13 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding: 1rem;
     background-color: rgba(208, 208, 209, 0.705);
 }
 
 #today-weather-main-img {
-    width: 130px;
+    width: 180px;
     display: block;
 }
 
@@ -99,10 +99,63 @@ main {
 }
 
 .temp-wrapper-card {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #current-status {
-    margin-top: 10px;
+    margin-top: 5px;
+    color: white;
 }
 
+#input-text {
+    background-color: transparent;
+    color: white;
+    padding: 4px;
+}
+
+#input-text:focus {
+    outline: none;
+}
+
+#submit-button {
+    padding: 4px;
+}
+
+#submit-button:hover {
+    cursor: pointer;
+}
+
+form {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+}
+
+.temp-wrapper-card > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.temp-card {
+    display: inline-block;
+    
+}
+
+.rain-wind-cont {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.temp-cont {
+    margin-top: 0.3rem;
+}
+
+@media (max-width: 786px) {
+    main {
+        top: 390px;
+    }
+  }

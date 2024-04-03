@@ -1,3 +1,4 @@
+import { returnIconName } from "../conditions"
 
 const get3daysForecast = async (town) => {
     //fetch data and format it for easier usage in the app
@@ -33,7 +34,7 @@ async function createWeatherObj(town) {
             wind: weather.currentWeather.wind_kph,
             cloud: weather.currentWeather.cloud,
             status: weather.currentWeather.condition.text,
-            iconCode: weather.currentWeather.condition.code,
+            iconName: returnIconName(weather.currentWeather.condition.code),
         },
 
         today: {
@@ -41,7 +42,7 @@ async function createWeatherObj(town) {
             max_celsius: weather.todayWeather.day.maxtemp_c,
             min_celsius: weather.todayWeather.day.mintemp_c,
             status: weather.todayWeather.day.condition.text,
-            iconCode: weather.todayWeather.day.condition.code,
+            iconName: returnIconName(weather.todayWeather.day.condition.code),
             rainChance: weather.todayWeather.day.daily_chance_of_rain,
             maxWind: weather.todayWeather.day.maxwind_kph,
         },
@@ -50,14 +51,18 @@ async function createWeatherObj(town) {
             max_celsius: weather.tomorrowWeather.day.maxtemp_c,
             min_celsius: weather.tomorrowWeather.day.mintemp_c,
             status: weather.tomorrowWeather.day.condition.text,
-            iconCode: weather.tomorrowWeather.day.condition.code,
+            iconName: returnIconName(weather.tomorrowWeather.day.condition.code),
+            rainChance: weather.tomorrowWeather.day.daily_chance_of_rain,
+            maxWind: weather.tomorrowWeather.day.maxwind_kph,
         },
         thirdDay: {
             date: weather.thirdDayWeather.date,
             max_celsius: weather.thirdDayWeather.day.maxtemp_c,
             min_celsius: weather.thirdDayWeather.day.mintemp_c,
             status: weather.thirdDayWeather.day.condition.text,
-            iconCode: weather.thirdDayWeather.day.condition.code,
+            iconName: returnIconName(weather.thirdDayWeather.day.condition.code),
+            rainChance: weather.thirdDayWeather.day.daily_chance_of_rain,
+            maxWind: weather.thirdDayWeather.day.maxwind_kph,
         }
     }
 
